@@ -253,6 +253,42 @@ export default class Compose {
     return '/namespace/upload'
   }
 
+  // Clone compose namespace
+  async namespaceClone (a: KV): Promise<KV> {
+    const {
+      namespaceID,
+      name,
+      slug,
+    } = (a as KV) || {}
+    if (!namespaceID) {
+      throw Error('field namespaceID is empty')
+    }
+    if (!name) {
+      throw Error('field name is empty')
+    }
+    if (!slug) {
+      throw Error('field slug is empty')
+    }
+    const cfg: AxiosRequestConfig = {
+      method: 'post',
+      url: this.namespaceCloneEndpoint({
+        namespaceID,
+      }),
+    }
+    cfg.data = {
+      name,
+      slug,
+    }
+    return this.api().request(cfg).then(result => stdResolve(result))
+  }
+
+  namespaceCloneEndpoint (a: KV): string {
+    const {
+      namespaceID,
+    } = a || {}
+    return `/namespace/${namespaceID}/clone`
+  }
+
   // Fire compose:namespace trigger
   async namespaceTriggerScript (a: KV): Promise<KV> {
     const {

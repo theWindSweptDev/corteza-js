@@ -48,6 +48,7 @@ export class Namespace {
   public canDeleteNamespace = false
   public canUpdateNamespace = false
   public canManageNamespace = false
+  public canCloneNamespace = false
   public canGrant = false
 
   constructor (i?: PartialNamespace) {
@@ -82,6 +83,7 @@ export class Namespace {
       'canDeleteNamespace',
       'canUpdateNamespace',
       'canManageNamespace',
+      'canCloneNamespace',
       'canGrant',
     )
   }
