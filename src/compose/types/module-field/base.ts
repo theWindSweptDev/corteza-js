@@ -17,13 +17,13 @@ export interface Capabilities {
 
 export interface Options {
   description: {
-    view: string,
-    edit: string | undefined,
-  },
+    view: string;
+    edit: string | undefined;
+  };
   hint: {
-    view: string,
-    edit: string | undefined,
-  },
+    view: string;
+    edit: string | undefined;
+  };
 }
 
 export const defaultOptions = (): Readonly<Options> => Object.freeze({
@@ -50,6 +50,7 @@ export interface Expressions {
 }
 
 interface Validator {
+  validatorID: string;
   test: string;
   error: string;
 }

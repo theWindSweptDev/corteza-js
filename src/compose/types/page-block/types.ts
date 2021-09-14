@@ -1,6 +1,8 @@
 import { Apply, CortezaID } from '../../../cast'
 
 export class Button {
+  public buttonID?: string = ''
+
   // Used when referring to Corredor automation script
   public script?: string = undefined
 

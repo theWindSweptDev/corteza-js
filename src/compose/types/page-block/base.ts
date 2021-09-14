@@ -19,6 +19,7 @@ export type PageBlockInput = PageBlock | Partial<PageBlock>
 const defaultXYWH = [0, 0, 3, 3]
 
 export class PageBlock {
+  public blockID = '';
   public title = '';
   public description = '';
 
@@ -42,7 +43,7 @@ export class PageBlock {
   apply (i?: PageBlockInput): void {
     if (!i) return
 
-    Apply(this, i, String, 'title', 'description')
+    Apply(this, i, String, 'blockID', 'title', 'description')
 
     if (i.xywh) {
       if (!Array.isArray(i.xywh)) {
