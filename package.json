@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "chart.js": "2.9.3",
-    "hex-rgb": "^4.1.0",
+    "hex-rgb": "^4.3.0",
     "lodash": "^4.17.15",
     "minimalist": "^1.0.0",
     "minimatch": "^3.0.4",
